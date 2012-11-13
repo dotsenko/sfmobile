@@ -1,0 +1,64 @@
+/*
+Design by mRova Solutions
+http://www.mrova.com
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+/*********** General ******************/
+#header{
+	border-bottom:4px solid #AF1606; /* Set to desired color of bar under header */
+	-webkit-box-shadow: 0px 1px 10px 5px #222;
+	-moz-box-shadow: 0px 1px 10px 5px #222;
+	box-shadow: 0px 1px 10px 5px #222;
+}
+.gallery { list-style: none; padding: 0; margin: 0; }
+.gallery:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
+.gallery li { float: left; width: 33.33333333%; }
+.gallery li a { display: block; margin: 5px; border: 1px solid #3c3c3c; }
+.gallery li img { display: block; width: 100%; height: auto; }
+
+.copyright {
+text-align: center;
+font-size: 11px;
+}
+
+.ui-btn-up-b, .ui-btn-hover-b, .ui-btn-down-a, .ui-btn-active, .ui-shadow{
+border: 1px solid #333  !important;
+ background: #333  !important;
+ font-weight: bold !important;
+ color: white !important;
+ text-shadow: 0 -1px 1px #333 !important;
+ background-image: -webkit-gradient(linear,left top,left bottom,from(#333),to(#333)) !important;
+ background-image: -webkit-linear-gradient(#333,#333) !important;
+ background-image: -moz-linear-gradient(#333,#333) !important;
+ background-image: -ms-linear-gradient(#333,#333) !important;
+ background-image: -o-linear-gradient(#333,#333) !important;
+ background-image: linear-gradient(#333,#333) !important;
+}
+
+.ui-icon-checkbox-on{
+    background-color: #333 !important;
+}
+.errors ul li {
+    color: red;
+   font-size: 15px;
+       list-style-type: none;
+       margin-left: -40px;
+}
+
+#header h1{
+    float: left;
+    padding-left: 40%;
+}
+
+.ui-link{
+    text-decoration: none;
+}
+
+.ui-header .ui-btn-left{
+    left: 80px !important;
+}
+
+#registration{
+    padding-left: 1%;
+    padding-bottom: 0.2%;
+}

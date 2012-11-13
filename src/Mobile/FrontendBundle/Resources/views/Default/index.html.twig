@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+
+{% block titlepage %}
+    <h1>Louvre</h1>
+{% endblock %}
+
+{% block body %}
+
+        <div data-role="content">
+
+            <ul data-role="listview" data-inset="true" data-theme="a">
+
+                    {% for m in menu %}
+                        <li>
+                            <a href="{{ path( m.url) }}">{{ m.title }}</a>
+                        </li>
+                    {% endfor %}
+
+            </ul>
+        </div><!-- /content -->
+
+{% endblock %}
