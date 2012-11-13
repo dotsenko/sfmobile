@@ -1,0 +1,12 @@
+{% extends '::base.html.twig' %}
+
+{% block titlepage %}
+    <h1>Login</h1>
+ {% endblock %}
+    {% block body %}
+
+    <div data-role="content">
+        {{ block('fos_user_content') }}
+    </div><!-- /content -->
+
+{% endblock %}

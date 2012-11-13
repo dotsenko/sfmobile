@@ -1,0 +1,55 @@
+{% extends '::base.html.twig' %}
+{% block titlepage %}
+    <h1>Contact</h1>
+{% endblock %}
+
+{% block body %}
+
+        <div data-role="content">
+            <div class="ui-body ui-body-b ui-corner-all">
+                <div class="contact-thankyou" style="display: none;">
+                    Thank you.  Your message has been sent.  We will get back to you as soon as we can.
+                </div>
+                <div class="contact-form">
+
+                    <p class="mandatory">
+                        * indicates Mandatory Field
+                    </p>
+                    <form action="{{ path('contactspage') }}" method="post" {{ form_enctype(form) }} novalidate>
+                        <div data-role="fieldcontain" class="text-field">
+                            <label class="ui-input-text" for="firstname">First Name*:</label>
+                            {{ form_widget(form.fname) }}
+                           <span class="errors"> {{ form_errors(form.fname) }} </span>
+                        </div>
+                        <div data-role="fieldcontain" class="text-field">
+                            <label class="ui-input-text" for="surname">Last Name:</label>
+                            {{ form_widget(form.lname) }}
+                            <span class="errors">  {{ form_errors(form.lname) }} </span>
+                        </div>
+                        <div data-role="fieldcontain" class="text-field">
+                            <label class="ui-input-text" for="email">Email Address*:</label>
+                            {{ form_widget(form.email) }}
+                            <span class="errors">   {{ form_errors(form.email) }} </span>
+                        </div>
+                        <div data-role="fieldcontain" class="text-field">
+                            <label class="ui-input-text" for="mobilephone">Mobile Number:</label>
+                            {{ form_widget(form.phone) }}
+                            <span class="errors">  {{ form_errors(form.phone) }} </span>
+                        </div>
+                        <div data-role="fieldcontain">
+                            <label class="ui-input-text" for="message">Message*:</label>
+                            {{ form_widget(form.message) }}
+                            <span class="errors">  {{ form_errors(form.message) }} </span>
+                        </div>
+
+                            <input type="submit" value="Send" >
+
+                        {{ form_rest(form) }}
+                    </form>
+                </div><!-- //.contact-form -->
+            </div>
+        </div><!-- /content -->
+
+
+
+{% endblock %}

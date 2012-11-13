@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% block header %}
+
+    <div data-role="page" data-add-back-btn="true" id="gallery-page">
+        <div data-role="header" id="header">
+            <span>
+                <a href="{{ path('homepage') }}">
+                    <img src="{{ asset('images/home.jpg') }}" height="30px" width="30px" style="float:left; padding-left: 1%;padding-top: 0.2%;" >
+                </a>
+            </span>
+        {% block titlepage %}
+            <h1>Gallery</h1>
+            <span>
+                <a href="{{ path('fos_user_profile_show') }}">
+                    <img src="{{ asset('images/user.png') }}" height="30px" width="30px" style="float:right; padding-right: 1%;padding-top: 0.2%;" >
+                </a>
+            </span>
+     {% endblock %}
+        </div><!-- /header -->
+     {% block body %}
+        <div data-role="content">
+            <ul class="gallery">
+                {% for g in gallery %}
+                <li>
+                    <a href="{{ asset('images/') }}{{ g.img }}" rel="external">
+                         <img src="{{ asset('images/') }}{{ g.imgmin }}" alt="{{ g.title }}"  />
+                     </a>
+                </li>
+                 {% endfor %}
+            </ul>
+         </div><!-- /content -->
+     {% endblock %}
+        <div data-role="footer" data-theme="a">
+            {% render "MobileFrontendBundle:Footer:index" %}
+        </div>
+        <!-- /Footer -->
+    </div><!-- /page -->
+
+{% endblock %}

@@ -1,0 +1,15 @@
+homepage:
+    pattern:  /
+    defaults: { _controller: MobileFrontendBundle:Default:index }
+
+gallerypage:
+    pattern:  /gallery
+    defaults: { _controller: MobileFrontendBundle:Gallery:index }
+
+contactspage:
+    pattern:  /contacts
+    defaults: { _controller: MobileFrontendBundle:Contact:index }
+
+aboutpage:
+    pattern:  /about
+    defaults: { _controller: MobileFrontendBundle:About:index }
