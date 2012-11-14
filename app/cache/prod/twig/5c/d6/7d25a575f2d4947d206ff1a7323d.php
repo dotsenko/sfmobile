@@ -29,24 +29,19 @@ class __TwigTemplate_5cd67d25a575f2d4947d206ff1a7323d extends Twig_Template
     {
         // line 4
         echo "    <p>";
-        if (isset($context["user"])) { $_user_ = $context["user"]; } else { $_user_ = null; }
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("registration.confirmed", array("%username%" => $this->getAttribute($_user_, "username")), "FOSUserBundle"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("registration.confirmed", array("%username%" => $this->getAttribute($this->getContext($context, "user"), "username")), "FOSUserBundle"), "html", null, true);
         echo "</p>
     ";
         // line 5
-        if (isset($context["app"])) { $_app_ = $context["app"]; } else { $_app_ = null; }
-        if ((!twig_test_empty($this->getAttribute($_app_, "session")))) {
+        if ((!twig_test_empty($this->getAttribute($this->getContext($context, "app"), "session")))) {
             // line 6
             echo "        ";
-            if (isset($context["app"])) { $_app_ = $context["app"]; } else { $_app_ = null; }
-            $context["targetUrl"] = $this->getAttribute($this->getAttribute($_app_, "session"), "get", array(0 => "_security.target_path"), "method");
+            $context["targetUrl"] = $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "session"), "get", array(0 => "_security.target_path"), "method");
             // line 7
             echo "        ";
-            if (isset($context["targetUrl"])) { $_targetUrl_ = $context["targetUrl"]; } else { $_targetUrl_ = null; }
-            if ((!twig_test_empty($_targetUrl_))) {
+            if ((!twig_test_empty($this->getContext($context, "targetUrl")))) {
                 echo "<p><a href=\"";
-                if (isset($context["targetUrl"])) { $_targetUrl_ = $context["targetUrl"]; } else { $_targetUrl_ = null; }
-                echo twig_escape_filter($this->env, $_targetUrl_, "html", null, true);
+                echo twig_escape_filter($this->env, $this->getContext($context, "targetUrl"), "html", null, true);
                 echo "\">";
                 echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("registration.back", array(), "FOSUserBundle"), "html", null, true);
                 echo "</a></p>";
@@ -68,6 +63,6 @@ class __TwigTemplate_5cd67d25a575f2d4947d206ff1a7323d extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  21 => 2,  98 => 25,  93 => 24,  70 => 13,  59 => 36,  49 => 20,  41 => 9,  53 => 8,  155 => 37,  141 => 39,  129 => 33,  125 => 32,  120 => 30,  114 => 27,  110 => 26,  69 => 9,  126 => 47,  209 => 78,  206 => 77,  201 => 76,  194 => 71,  191 => 70,  186 => 67,  180 => 63,  176 => 61,  166 => 58,  158 => 56,  153 => 55,  143 => 40,  134 => 44,  123 => 40,  118 => 39,  90 => 28,  87 => 27,  66 => 18,  60 => 21,  146 => 50,  136 => 37,  122 => 31,  107 => 27,  101 => 26,  95 => 16,  82 => 25,  73 => 10,  67 => 12,  52 => 21,  102 => 19,  89 => 22,  63 => 14,  56 => 5,  27 => 3,  249 => 96,  239 => 90,  235 => 88,  228 => 84,  224 => 82,  219 => 80,  217 => 79,  214 => 79,  211 => 77,  208 => 76,  202 => 72,  199 => 71,  193 => 67,  182 => 63,  178 => 61,  175 => 60,  172 => 59,  165 => 55,  161 => 57,  156 => 51,  154 => 50,  150 => 30,  147 => 47,  132 => 39,  127 => 43,  113 => 34,  83 => 13,  78 => 16,  64 => 16,  61 => 15,  32 => 5,  55 => 9,  48 => 10,  45 => 13,  36 => 6,  43 => 10,  50 => 11,  47 => 12,  39 => 6,  25 => 3,  22 => 6,  34 => 6,  30 => 4,  117 => 42,  112 => 41,  109 => 20,  104 => 22,  96 => 32,  84 => 14,  80 => 24,  68 => 24,  44 => 9,  26 => 3,  23 => 1,  20 => 1,  17 => 1,  92 => 28,  86 => 21,  79 => 40,  57 => 35,  46 => 7,  37 => 6,  33 => 6,  29 => 4,  24 => 3,  19 => 1,  144 => 46,  138 => 38,  130 => 46,  124 => 24,  121 => 41,  115 => 40,  111 => 36,  108 => 31,  99 => 36,  94 => 29,  91 => 15,  88 => 16,  85 => 26,  77 => 11,  74 => 15,  71 => 19,  65 => 7,  62 => 6,  58 => 8,  54 => 34,  51 => 18,  42 => 7,  38 => 6,  35 => 5,  31 => 4,  28 => 1,);
+        return array (  36 => 6,  118 => 31,  105 => 27,  100 => 26,  115 => 47,  96 => 37,  85 => 32,  155 => 37,  150 => 30,  143 => 40,  138 => 38,  136 => 37,  125 => 32,  114 => 27,  110 => 26,  101 => 21,  91 => 15,  83 => 13,  65 => 7,  56 => 5,  45 => 13,  209 => 84,  205 => 82,  196 => 79,  192 => 78,  189 => 77,  178 => 71,  176 => 70,  165 => 63,  161 => 61,  152 => 58,  148 => 57,  145 => 56,  141 => 39,  134 => 50,  132 => 49,  127 => 46,  123 => 44,  109 => 39,  93 => 24,  90 => 32,  54 => 34,  133 => 44,  124 => 41,  111 => 37,  107 => 42,  80 => 26,  69 => 9,  63 => 18,  60 => 16,  52 => 21,  72 => 16,  64 => 15,  53 => 13,  34 => 5,  44 => 11,  224 => 96,  215 => 90,  211 => 88,  204 => 84,  200 => 83,  195 => 80,  193 => 79,  190 => 78,  188 => 77,  185 => 76,  179 => 72,  177 => 71,  171 => 67,  162 => 63,  158 => 61,  156 => 60,  153 => 59,  146 => 55,  142 => 54,  137 => 51,  131 => 48,  126 => 46,  120 => 30,  117 => 44,  103 => 41,  99 => 34,  74 => 15,  47 => 12,  32 => 11,  42 => 9,  39 => 7,  30 => 4,  26 => 3,  27 => 3,  23 => 1,  97 => 25,  95 => 16,  88 => 29,  82 => 27,  78 => 16,  75 => 24,  71 => 14,  49 => 20,  40 => 8,  25 => 4,  22 => 3,  20 => 1,  17 => 1,  92 => 36,  86 => 21,  79 => 40,  77 => 11,  57 => 35,  46 => 11,  37 => 6,  33 => 6,  29 => 4,  24 => 11,  19 => 2,  135 => 50,  129 => 33,  122 => 31,  116 => 42,  113 => 40,  108 => 40,  104 => 22,  102 => 37,  94 => 33,  89 => 22,  87 => 28,  84 => 28,  81 => 31,  73 => 10,  70 => 13,  67 => 12,  62 => 6,  59 => 36,  55 => 14,  51 => 18,  48 => 8,  41 => 10,  38 => 7,  35 => 6,  31 => 3,  28 => 4,);
     }
 }

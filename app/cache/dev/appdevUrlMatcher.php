@@ -158,6 +158,11 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\AboutController::indexAction',  '_route' => 'aboutpage',);
         }
 
+        // sharepage
+        if ($pathinfo === '/share') {
+            return array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\ShareController::indexAction',  '_route' => 'sharepage',);
+        }
+
         // fos_user_security_login
         if ($pathinfo === '/login') {
             return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'fos_user_security_login',);
@@ -285,6 +290,69 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::resetAction',)), array('_route' => 'fos_user_resetting_reset'));
             }
             not_fos_user_resetting_reset:
+
+        }
+
+        if (0 === strpos($pathinfo, '/admin')) {
+            // sonata_admin_dashboard
+            if ($pathinfo === '/admin/dashboard') {
+                return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CoreController::dashboardAction',  '_route' => 'sonata_admin_dashboard',);
+            }
+
+            // sonata_admin_retrieve_form_element
+            if ($pathinfo === '/admin/core/get-form-field-element') {
+                return array (  '_controller' => 'sonata.admin.controller.admin:retrieveFormFieldElementAction',  '_route' => 'sonata_admin_retrieve_form_element',);
+            }
+
+            // sonata_admin_append_form_element
+            if ($pathinfo === '/admin/core/append-form-field-element') {
+                return array (  '_controller' => 'sonata.admin.controller.admin:appendFormFieldElementAction',  '_route' => 'sonata_admin_append_form_element',);
+            }
+
+            // sonata_admin_short_object_information
+            if ($pathinfo === '/admin/core/get-short-object-description') {
+                return array (  '_controller' => 'sonata.admin.controller.admin:getShortObjectDescriptionAction',  '_route' => 'sonata_admin_short_object_information',);
+            }
+
+            // sonata_admin_set_object_field_value
+            if ($pathinfo === '/admin/core/set-object-field-value') {
+                return array (  '_controller' => 'sonata.admin.controller.admin:setObjectFieldValueAction',  '_route' => 'sonata_admin_set_object_field_value',);
+            }
+
+            // admin_mobile_frontend_gallery_list
+            if ($pathinfo === '/admin/mobile/frontend/gallery/list') {
+                return array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\GalleryAdminController::listAction',  '_sonata_admin' => 'ens.jobeet.admin.gallery',  '_sonata_name' => 'admin_mobile_frontend_gallery_list',  '_route' => 'admin_mobile_frontend_gallery_list',);
+            }
+
+            // admin_mobile_frontend_gallery_create
+            if ($pathinfo === '/admin/mobile/frontend/gallery/create') {
+                return array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\GalleryAdminController::createAction',  '_sonata_admin' => 'ens.jobeet.admin.gallery',  '_sonata_name' => 'admin_mobile_frontend_gallery_create',  '_route' => 'admin_mobile_frontend_gallery_create',);
+            }
+
+            // admin_mobile_frontend_gallery_batch
+            if ($pathinfo === '/admin/mobile/frontend/gallery/batch') {
+                return array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\GalleryAdminController::batchAction',  '_sonata_admin' => 'ens.jobeet.admin.gallery',  '_sonata_name' => 'admin_mobile_frontend_gallery_batch',  '_route' => 'admin_mobile_frontend_gallery_batch',);
+            }
+
+            // admin_mobile_frontend_gallery_edit
+            if (0 === strpos($pathinfo, '/admin/mobile/frontend/gallery') && preg_match('#^/admin/mobile/frontend/gallery/(?P<id>[^/]+?)/edit$#s', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\GalleryAdminController::editAction',  '_sonata_admin' => 'ens.jobeet.admin.gallery',  '_sonata_name' => 'admin_mobile_frontend_gallery_edit',)), array('_route' => 'admin_mobile_frontend_gallery_edit'));
+            }
+
+            // admin_mobile_frontend_gallery_delete
+            if (0 === strpos($pathinfo, '/admin/mobile/frontend/gallery') && preg_match('#^/admin/mobile/frontend/gallery/(?P<id>[^/]+?)/delete$#s', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\GalleryAdminController::deleteAction',  '_sonata_admin' => 'ens.jobeet.admin.gallery',  '_sonata_name' => 'admin_mobile_frontend_gallery_delete',)), array('_route' => 'admin_mobile_frontend_gallery_delete'));
+            }
+
+            // admin_mobile_frontend_gallery_show
+            if (0 === strpos($pathinfo, '/admin/mobile/frontend/gallery') && preg_match('#^/admin/mobile/frontend/gallery/(?P<id>[^/]+?)/show$#s', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\GalleryAdminController::showAction',  '_sonata_admin' => 'ens.jobeet.admin.gallery',  '_sonata_name' => 'admin_mobile_frontend_gallery_show',)), array('_route' => 'admin_mobile_frontend_gallery_show'));
+            }
+
+            // admin_mobile_frontend_gallery_export
+            if ($pathinfo === '/admin/mobile/frontend/gallery/export') {
+                return array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\GalleryAdminController::exportAction',  '_sonata_admin' => 'ens.jobeet.admin.gallery',  '_sonata_name' => 'admin_mobile_frontend_gallery_export',  '_route' => 'admin_mobile_frontend_gallery_export',);
+            }
 
         }
 

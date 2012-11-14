@@ -48,6 +48,11 @@ class appprodUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             return array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\AboutController::indexAction',  '_route' => 'aboutpage',);
         }
 
+        // sharepage
+        if ($pathinfo === '/share') {
+            return array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\ShareController::indexAction',  '_route' => 'sharepage',);
+        }
+
         // fos_user_security_login
         if ($pathinfo === '/login') {
             return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'fos_user_security_login',);

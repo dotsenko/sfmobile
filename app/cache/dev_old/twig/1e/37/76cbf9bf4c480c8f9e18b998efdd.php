@@ -19,18 +19,21 @@ class __TwigTemplate_1e3776cbf9bf4c480c8f9e18b998efdd extends Twig_Template
         echo "<ol class=\"traces logs\">
     ";
         // line 2
+        if (isset($context["logs"])) { $_logs_ = $context["logs"]; } else { $_logs_ = null; }
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "logs"));
+        $context['_seq'] = twig_ensure_traversable($_logs_);
         foreach ($context['_seq'] as $context["_key"] => $context["log"]) {
             // line 3
             echo "        <li";
-            if (twig_in_filter($this->getAttribute($this->getContext($context, "log"), "priorityName"), array(0 => "EMERG", 1 => "ERR", 2 => "CRIT", 3 => "ALERT", 4 => "ERROR", 5 => "CRITICAL"))) {
+            if (isset($context["log"])) { $_log_ = $context["log"]; } else { $_log_ = null; }
+            if (twig_in_filter($this->getAttribute($_log_, "priorityName"), array(0 => "EMERG", 1 => "ERR", 2 => "CRIT", 3 => "ALERT", 4 => "ERROR", 5 => "CRITICAL"))) {
                 echo " class=\"error\"";
             }
             echo ">
             ";
             // line 4
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "log"), "message"), "html", null, true);
+            if (isset($context["log"])) { $_log_ = $context["log"]; } else { $_log_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_log_, "message"), "html", null, true);
             echo "
         </li>
     ";
@@ -55,6 +58,6 @@ class __TwigTemplate_1e3776cbf9bf4c480c8f9e18b998efdd extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  89 => 20,  72 => 16,  64 => 15,  55 => 14,  53 => 13,  42 => 10,  34 => 7,  23 => 4,  104 => 24,  97 => 22,  95 => 21,  88 => 19,  82 => 19,  78 => 17,  75 => 16,  71 => 14,  67 => 12,  49 => 12,  40 => 7,  38 => 6,  31 => 4,  25 => 4,  22 => 3,  20 => 2,  224 => 96,  215 => 90,  211 => 88,  204 => 84,  200 => 83,  195 => 80,  193 => 79,  190 => 78,  188 => 77,  185 => 76,  179 => 72,  177 => 71,  171 => 67,  162 => 63,  158 => 61,  156 => 60,  153 => 59,  146 => 55,  142 => 54,  137 => 51,  135 => 50,  131 => 48,  129 => 47,  126 => 46,  120 => 45,  117 => 44,  113 => 43,  103 => 36,  99 => 34,  94 => 31,  74 => 27,  70 => 26,  62 => 24,  59 => 23,  47 => 19,  39 => 9,  32 => 11,  17 => 1,  92 => 20,  86 => 6,  79 => 40,  77 => 28,  57 => 9,  46 => 14,  37 => 8,  33 => 7,  29 => 5,  24 => 3,  19 => 2,  44 => 11,  41 => 7,  30 => 4,  27 => 3,);
+        return array (  50 => 6,  47 => 5,  39 => 8,  25 => 3,  22 => 4,  34 => 6,  117 => 22,  112 => 21,  109 => 20,  104 => 19,  96 => 18,  84 => 14,  80 => 12,  68 => 9,  44 => 6,  26 => 4,  23 => 3,  17 => 1,  92 => 39,  86 => 6,  79 => 40,  57 => 22,  46 => 7,  29 => 6,  24 => 4,  19 => 1,  69 => 14,  63 => 10,  55 => 8,  49 => 6,  43 => 7,  41 => 14,  37 => 7,  20 => 2,  157 => 26,  149 => 44,  145 => 43,  142 => 42,  132 => 39,  110 => 35,  106 => 34,  98 => 33,  93 => 32,  90 => 31,  83 => 27,  81 => 26,  73 => 20,  61 => 15,  52 => 13,  48 => 11,  45 => 10,  40 => 8,  36 => 6,  33 => 4,  30 => 3,  27 => 6,  144 => 54,  138 => 40,  130 => 46,  124 => 24,  121 => 36,  115 => 40,  111 => 38,  108 => 37,  99 => 32,  94 => 29,  91 => 17,  88 => 16,  85 => 26,  77 => 39,  74 => 20,  71 => 19,  65 => 16,  62 => 15,  58 => 8,  54 => 11,  51 => 10,  42 => 9,  38 => 8,  35 => 4,  31 => 5,  28 => 4,);
     }
 }

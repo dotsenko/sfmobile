@@ -13,3 +13,7 @@ contactspage:
 aboutpage:
     pattern:  /about
     defaults: { _controller: MobileFrontendBundle:About:index }
+
+sharepage:
+    pattern:  /share
+    defaults: { _controller: MobileFrontendBundle:Share:index }

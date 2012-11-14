@@ -19,26 +19,20 @@ class __TwigTemplate_8cb6e80911981a6261b13a4e949c49b8 extends Twig_Template
         echo "<div class=\"block\">
     ";
         // line 2
-        if (isset($context["count"])) { $_count_ = $context["count"]; } else { $_count_ = null; }
-        if (($_count_ > 0)) {
+        if (($this->getContext($context, "count") > 0)) {
             // line 3
             echo "        <h2>
             <span><small>[";
             // line 4
-            if (isset($context["count"])) { $_count_ = $context["count"]; } else { $_count_ = null; }
-            if (isset($context["position"])) { $_position_ = $context["position"]; } else { $_position_ = null; }
-            echo twig_escape_filter($this->env, (($_count_ - $_position_) + 1), "html", null, true);
+            echo twig_escape_filter($this->env, (($this->getContext($context, "count") - $this->getContext($context, "position")) + 1), "html", null, true);
             echo "/";
-            if (isset($context["count"])) { $_count_ = $context["count"]; } else { $_count_ = null; }
-            echo twig_escape_filter($this->env, ($_count_ + 1), "html", null, true);
+            echo twig_escape_filter($this->env, ($this->getContext($context, "count") + 1), "html", null, true);
             echo "]</small></span>
             ";
             // line 5
-            if (isset($context["exception"])) { $_exception_ = $context["exception"]; } else { $_exception_ = null; }
-            echo $this->env->getExtension('code')->abbrClass($this->getAttribute($_exception_, "class"));
+            echo $this->env->getExtension('code')->abbrClass($this->getAttribute($this->getContext($context, "exception"), "class"));
             echo ": ";
-            if (isset($context["exception"])) { $_exception_ = $context["exception"]; } else { $_exception_ = null; }
-            echo $this->env->getExtension('code')->formatFileFromText(strtr(twig_escape_filter($this->env, $this->getAttribute($_exception_, "message")), array("
+            echo $this->env->getExtension('code')->formatFileFromText(strtr(twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "exception"), "message")), array("
 " => "<br />")));
             echo "&nbsp;
             ";
@@ -46,34 +40,27 @@ class __TwigTemplate_8cb6e80911981a6261b13a4e949c49b8 extends Twig_Template
             ob_start();
             // line 7
             echo "            <a href=\"#\" onclick=\"toggle('traces_";
-            if (isset($context["position"])) { $_position_ = $context["position"]; } else { $_position_ = null; }
-            echo twig_escape_filter($this->env, $_position_, "html", null, true);
+            echo twig_escape_filter($this->env, $this->getContext($context, "position"), "html", null, true);
             echo "', 'traces'); switchIcons('icon_traces_";
-            if (isset($context["position"])) { $_position_ = $context["position"]; } else { $_position_ = null; }
-            echo twig_escape_filter($this->env, $_position_, "html", null, true);
+            echo twig_escape_filter($this->env, $this->getContext($context, "position"), "html", null, true);
             echo "_open', 'icon_traces_";
-            if (isset($context["position"])) { $_position_ = $context["position"]; } else { $_position_ = null; }
-            echo twig_escape_filter($this->env, $_position_, "html", null, true);
+            echo twig_escape_filter($this->env, $this->getContext($context, "position"), "html", null, true);
             echo "_close'); return false;\">
                 <img class=\"toggle\" id=\"icon_traces_";
             // line 8
-            if (isset($context["position"])) { $_position_ = $context["position"]; } else { $_position_ = null; }
-            echo twig_escape_filter($this->env, $_position_, "html", null, true);
+            echo twig_escape_filter($this->env, $this->getContext($context, "position"), "html", null, true);
             echo "_close\" alt=\"-\" src=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/framework/images/blue_picto_less.gif"), "html", null, true);
             echo "\" style=\"visibility: ";
-            if (isset($context["count"])) { $_count_ = $context["count"]; } else { $_count_ = null; }
-            echo (((0 == $_count_)) ? ("display") : ("hidden"));
+            echo (((0 == $this->getContext($context, "count"))) ? ("display") : ("hidden"));
             echo "\" />
                 <img class=\"toggle\" id=\"icon_traces_";
             // line 9
-            if (isset($context["position"])) { $_position_ = $context["position"]; } else { $_position_ = null; }
-            echo twig_escape_filter($this->env, $_position_, "html", null, true);
+            echo twig_escape_filter($this->env, $this->getContext($context, "position"), "html", null, true);
             echo "_open\" alt=\"+\" src=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/framework/images/blue_picto_more.gif"), "html", null, true);
             echo "\" style=\"visibility: ";
-            if (isset($context["count"])) { $_count_ = $context["count"]; } else { $_count_ = null; }
-            echo (((0 == $_count_)) ? ("hidden") : ("display"));
+            echo (((0 == $this->getContext($context, "count"))) ? ("hidden") : ("display"));
             echo "; margin-left: -18px\" />
             </a>
             ";
@@ -90,31 +77,24 @@ class __TwigTemplate_8cb6e80911981a6261b13a4e949c49b8 extends Twig_Template
         echo "
     <a id=\"traces_link_";
         // line 17
-        if (isset($context["position"])) { $_position_ = $context["position"]; } else { $_position_ = null; }
-        echo twig_escape_filter($this->env, $_position_, "html", null, true);
+        echo twig_escape_filter($this->env, $this->getContext($context, "position"), "html", null, true);
         echo "\"></a>
     <ol class=\"traces list_exception\" id=\"traces_";
         // line 18
-        if (isset($context["position"])) { $_position_ = $context["position"]; } else { $_position_ = null; }
-        echo twig_escape_filter($this->env, $_position_, "html", null, true);
+        echo twig_escape_filter($this->env, $this->getContext($context, "position"), "html", null, true);
         echo "\" style=\"display: ";
-        if (isset($context["count"])) { $_count_ = $context["count"]; } else { $_count_ = null; }
-        echo (((0 == $_count_)) ? ("block") : ("none"));
+        echo (((0 == $this->getContext($context, "count"))) ? ("block") : ("none"));
         echo "\">
         ";
         // line 19
-        if (isset($context["exception"])) { $_exception_ = $context["exception"]; } else { $_exception_ = null; }
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getAttribute($_exception_, "trace"));
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getContext($context, "exception"), "trace"));
         foreach ($context['_seq'] as $context["i"] => $context["trace"]) {
             // line 20
             echo "            <li>
                 ";
             // line 21
-            if (isset($context["position"])) { $_position_ = $context["position"]; } else { $_position_ = null; }
-            if (isset($context["i"])) { $_i_ = $context["i"]; } else { $_i_ = null; }
-            if (isset($context["trace"])) { $_trace_ = $context["trace"]; } else { $_trace_ = null; }
-            $this->env->loadTemplate("TwigBundle:Exception:trace.html.twig")->display(array("prefix" => $_position_, "i" => $_i_, "trace" => $_trace_));
+            $this->env->loadTemplate("TwigBundle:Exception:trace.html.twig")->display(array("prefix" => $this->getContext($context, "position"), "i" => $this->getContext($context, "i"), "trace" => $this->getContext($context, "trace")));
             // line 22
             echo "            </li>
         ";
@@ -140,6 +120,6 @@ class __TwigTemplate_8cb6e80911981a6261b13a4e949c49b8 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  117 => 22,  112 => 21,  109 => 20,  104 => 19,  96 => 18,  84 => 14,  80 => 12,  68 => 9,  44 => 6,  26 => 4,  23 => 3,  20 => 2,  17 => 1,  92 => 39,  86 => 6,  79 => 40,  57 => 22,  46 => 7,  37 => 8,  33 => 7,  29 => 6,  24 => 4,  19 => 1,  144 => 54,  138 => 50,  130 => 46,  124 => 24,  121 => 41,  115 => 40,  111 => 38,  108 => 37,  99 => 32,  94 => 29,  91 => 17,  88 => 16,  85 => 26,  77 => 39,  74 => 20,  71 => 19,  65 => 16,  62 => 15,  58 => 8,  54 => 11,  51 => 10,  42 => 9,  38 => 8,  35 => 5,  31 => 4,  28 => 3,);
+        return array (  97 => 22,  95 => 21,  88 => 19,  82 => 18,  78 => 17,  75 => 16,  71 => 14,  49 => 8,  40 => 7,  25 => 4,  22 => 3,  20 => 2,  17 => 1,  92 => 20,  86 => 6,  79 => 40,  77 => 39,  57 => 9,  46 => 14,  37 => 8,  33 => 7,  29 => 6,  24 => 4,  19 => 1,  135 => 54,  129 => 50,  122 => 46,  116 => 42,  113 => 41,  108 => 40,  104 => 24,  102 => 37,  94 => 32,  89 => 29,  87 => 28,  84 => 27,  81 => 26,  73 => 21,  70 => 20,  67 => 12,  62 => 16,  59 => 15,  55 => 13,  51 => 11,  48 => 10,  41 => 9,  38 => 6,  35 => 7,  31 => 5,  28 => 3,);
     }
 }

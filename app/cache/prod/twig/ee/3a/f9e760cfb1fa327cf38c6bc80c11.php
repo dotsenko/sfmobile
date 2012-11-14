@@ -38,20 +38,17 @@ class __TwigTemplate_ee3af9e760cfb1fa327cf38c6bc80c11 extends Twig_Template
         ob_start();
         // line 8
         echo "        ";
-        if (isset($context["collector"])) { $_collector_ = $context["collector"]; } else { $_collector_ = null; }
-        if ($this->getAttribute($_collector_, "user")) {
+        if ($this->getAttribute($this->getContext($context, "collector"), "user")) {
             // line 9
             echo "            ";
-            if (isset($context["collector"])) { $_collector_ = $context["collector"]; } else { $_collector_ = null; }
-            echo twig_escape_filter($this->env, $this->getAttribute($_collector_, "user"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "user"), "html", null, true);
             echo " ";
-            if (isset($context["collector"])) { $_collector_ = $context["collector"]; } else { $_collector_ = null; }
-            if ((!$this->getAttribute($_collector_, "authenticated"))) {
+            if ((!$this->getAttribute($this->getContext($context, "collector"), "authenticated"))) {
                 echo "<em>(not auth.)</em>";
             }
             // line 10
             echo "        ";
-        } elseif ($this->getAttribute($_collector_, "enabled")) {
+        } elseif ($this->getAttribute($this->getContext($context, "collector"), "enabled")) {
             // line 11
             echo "            not authenticated
         ";
@@ -65,8 +62,7 @@ class __TwigTemplate_ee3af9e760cfb1fa327cf38c6bc80c11 extends Twig_Template
         $context["text"] = ('' === $tmp = ob_get_clean()) ? '' : new Twig_Markup($tmp, $this->env->getCharset());
         // line 16
         echo "    ";
-        if (isset($context["profiler_url"])) { $_profiler_url_ = $context["profiler_url"]; } else { $_profiler_url_ = null; }
-        $this->env->loadTemplate("WebProfilerBundle:Profiler:toolbar_item.html.twig")->display(array_merge($context, array("link" => $_profiler_url_)));
+        $this->env->loadTemplate("WebProfilerBundle:Profiler:toolbar_item.html.twig")->display(array_merge($context, array("link" => $this->getContext($context, "profiler_url"))));
     }
 
     // line 19
@@ -90,16 +86,14 @@ class __TwigTemplate_ee3af9e760cfb1fa327cf38c6bc80c11 extends Twig_Template
         echo "    <h2>Security</h2>
     ";
         // line 28
-        if (isset($context["collector"])) { $_collector_ = $context["collector"]; } else { $_collector_ = null; }
-        if ($this->getAttribute($_collector_, "user")) {
+        if ($this->getAttribute($this->getContext($context, "collector"), "user")) {
             // line 29
             echo "        <table>
             <tr>
                 <th>Username</th>
                 <td>";
             // line 32
-            if (isset($context["collector"])) { $_collector_ = $context["collector"]; } else { $_collector_ = null; }
-            echo twig_escape_filter($this->env, $this->getAttribute($_collector_, "user"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "user"), "html", null, true);
             echo "</td>
             </tr>
             <tr>
@@ -107,16 +101,14 @@ class __TwigTemplate_ee3af9e760cfb1fa327cf38c6bc80c11 extends Twig_Template
                 <td>
                     ";
             // line 37
-            if (isset($context["collector"])) { $_collector_ = $context["collector"]; } else { $_collector_ = null; }
-            if ($this->getAttribute($_collector_, "authenticated")) {
+            if ($this->getAttribute($this->getContext($context, "collector"), "authenticated")) {
                 // line 38
                 echo "                        yes
                     ";
             } else {
                 // line 40
                 echo "                        no ";
-                if (isset($context["collector"])) { $_collector_ = $context["collector"]; } else { $_collector_ = null; }
-                if ((!twig_length_filter($this->env, $this->getAttribute($_collector_, "roles")))) {
+                if ((!twig_length_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "roles")))) {
                     echo "<em>(probably because the user has no roles)</em>";
                 }
                 // line 41
@@ -129,13 +121,12 @@ class __TwigTemplate_ee3af9e760cfb1fa327cf38c6bc80c11 extends Twig_Template
                 <th>Roles</th>
                 <td>";
             // line 46
-            if (isset($context["collector"])) { $_collector_ = $context["collector"]; } else { $_collector_ = null; }
-            echo twig_escape_filter($this->env, $this->env->getExtension('yaml')->encode($this->getAttribute($_collector_, "roles")), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('yaml')->encode($this->getAttribute($this->getContext($context, "collector"), "roles")), "html", null, true);
             echo "</td>
             </tr>
         </table>
     ";
-        } elseif ($this->getAttribute($_collector_, "enabled")) {
+        } elseif ($this->getAttribute($this->getContext($context, "collector"), "enabled")) {
             // line 50
             echo "        <p>
             <em>No token</em>
@@ -162,6 +153,6 @@ class __TwigTemplate_ee3af9e760cfb1fa327cf38c6bc80c11 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  144 => 54,  138 => 50,  130 => 46,  124 => 42,  121 => 41,  115 => 40,  111 => 38,  108 => 37,  99 => 32,  94 => 29,  91 => 28,  88 => 27,  85 => 26,  77 => 21,  74 => 20,  71 => 19,  65 => 16,  62 => 15,  58 => 13,  54 => 11,  51 => 10,  42 => 9,  38 => 8,  35 => 7,  31 => 4,  28 => 3,);
+        return array (  135 => 54,  129 => 50,  122 => 46,  116 => 42,  113 => 41,  108 => 40,  104 => 38,  102 => 37,  94 => 32,  89 => 29,  87 => 28,  84 => 27,  81 => 26,  73 => 21,  70 => 20,  67 => 19,  62 => 16,  59 => 15,  55 => 13,  51 => 11,  48 => 10,  41 => 9,  38 => 8,  35 => 7,  31 => 4,  28 => 3,);
     }
 }

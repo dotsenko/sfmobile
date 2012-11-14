@@ -17,7 +17,10 @@ class __TwigTemplate_4eb5f159258ab44c3c24018885d470cd extends Twig_Template
     {
         // line 1
         echo "<div class=\"ui-bar\">
-    <a href=\"share-dialog.html\"  data-role=\"button\" data-icon=\"star\" data-theme=\"a\" data-rel=\"dialog\">Share</a>
+    <a href=\"";
+        // line 2
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sharepage"), "html", null, true);
+        echo "\"  data-role=\"button\" data-icon=\"star\" data-theme=\"a\" data-rel=\"dialog\">Share</a>
     <a href=\"";
         // line 3
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("contactspage"), "html", null, true);
@@ -38,6 +41,6 @@ class __TwigTemplate_4eb5f159258ab44c3c24018885d470cd extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  41 => 10,  34 => 6,  20 => 2,  17 => 1,  100 => 21,  94 => 16,  90 => 15,  85 => 14,  82 => 13,  76 => 11,  72 => 10,  68 => 9,  64 => 7,  61 => 6,  55 => 5,  45 => 22,  43 => 21,  36 => 18,  33 => 13,  31 => 6,  27 => 5,  21 => 3,  56 => 19,  54 => 18,  48 => 15,  39 => 9,  35 => 8,  29 => 4,  26 => 3,);
+        return array (  24 => 3,  20 => 2,  17 => 1,  155 => 37,  150 => 30,  143 => 40,  141 => 39,  138 => 38,  136 => 37,  129 => 33,  125 => 32,  122 => 31,  120 => 30,  114 => 27,  110 => 26,  104 => 22,  101 => 21,  95 => 16,  91 => 15,  86 => 14,  83 => 13,  77 => 11,  73 => 10,  69 => 9,  65 => 7,  62 => 6,  56 => 5,  47 => 44,  33 => 6,  29 => 5,  23 => 1,  63 => 18,  52 => 15,  49 => 14,  45 => 21,  38 => 18,  35 => 13,  30 => 4,  27 => 3,);
     }
 }

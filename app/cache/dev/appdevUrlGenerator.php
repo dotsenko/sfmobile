@@ -36,6 +36,7 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'gallerypage' => true,
        'contactspage' => true,
        'aboutpage' => true,
+       'sharepage' => true,
        'fos_user_security_login' => true,
        'fos_user_security_check' => true,
        'fos_user_security_logout' => true,
@@ -50,6 +51,18 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'fos_user_resetting_check_email' => true,
        'fos_user_resetting_reset' => true,
        'fos_user_change_password' => true,
+       'sonata_admin_dashboard' => true,
+       'sonata_admin_retrieve_form_element' => true,
+       'sonata_admin_append_form_element' => true,
+       'sonata_admin_short_object_information' => true,
+       'sonata_admin_set_object_field_value' => true,
+       'admin_mobile_frontend_gallery_list' => true,
+       'admin_mobile_frontend_gallery_create' => true,
+       'admin_mobile_frontend_gallery_batch' => true,
+       'admin_mobile_frontend_gallery_edit' => true,
+       'admin_mobile_frontend_gallery_delete' => true,
+       'admin_mobile_frontend_gallery_show' => true,
+       'admin_mobile_frontend_gallery_export' => true,
     );
 
     /**
@@ -188,6 +201,11 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         return array(array (), array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\AboutController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/about',  ),));
     }
 
+    private function getsharepageRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\ShareController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/share',  ),));
+    }
+
     private function getfos_user_security_loginRouteInfo()
     {
         return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::loginAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/login',  ),));
@@ -256,5 +274,65 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getfos_user_change_passwordRouteInfo()
     {
         return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',), array (  '_method' => 'GET|POST',), array (  0 =>   array (    0 => 'text',    1 => '/profile/change-password',  ),));
+    }
+
+    private function getsonata_admin_dashboardRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CoreController::dashboardAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/dashboard',  ),));
+    }
+
+    private function getsonata_admin_retrieve_form_elementRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'sonata.admin.controller.admin:retrieveFormFieldElementAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/core/get-form-field-element',  ),));
+    }
+
+    private function getsonata_admin_append_form_elementRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'sonata.admin.controller.admin:appendFormFieldElementAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/core/append-form-field-element',  ),));
+    }
+
+    private function getsonata_admin_short_object_informationRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'sonata.admin.controller.admin:getShortObjectDescriptionAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/core/get-short-object-description',  ),));
+    }
+
+    private function getsonata_admin_set_object_field_valueRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'sonata.admin.controller.admin:setObjectFieldValueAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/core/set-object-field-value',  ),));
+    }
+
+    private function getadmin_mobile_frontend_gallery_listRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\GalleryAdminController::listAction',  '_sonata_admin' => 'ens.jobeet.admin.gallery',  '_sonata_name' => 'admin_mobile_frontend_gallery_list',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/mobile/frontend/gallery/list',  ),));
+    }
+
+    private function getadmin_mobile_frontend_gallery_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\GalleryAdminController::createAction',  '_sonata_admin' => 'ens.jobeet.admin.gallery',  '_sonata_name' => 'admin_mobile_frontend_gallery_create',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/mobile/frontend/gallery/create',  ),));
+    }
+
+    private function getadmin_mobile_frontend_gallery_batchRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\GalleryAdminController::batchAction',  '_sonata_admin' => 'ens.jobeet.admin.gallery',  '_sonata_name' => 'admin_mobile_frontend_gallery_batch',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/mobile/frontend/gallery/batch',  ),));
+    }
+
+    private function getadmin_mobile_frontend_gallery_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\GalleryAdminController::editAction',  '_sonata_admin' => 'ens.jobeet.admin.gallery',  '_sonata_name' => 'admin_mobile_frontend_gallery_edit',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/mobile/frontend/gallery',  ),));
+    }
+
+    private function getadmin_mobile_frontend_gallery_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\GalleryAdminController::deleteAction',  '_sonata_admin' => 'ens.jobeet.admin.gallery',  '_sonata_name' => 'admin_mobile_frontend_gallery_delete',), array (), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/mobile/frontend/gallery',  ),));
+    }
+
+    private function getadmin_mobile_frontend_gallery_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\GalleryAdminController::showAction',  '_sonata_admin' => 'ens.jobeet.admin.gallery',  '_sonata_name' => 'admin_mobile_frontend_gallery_show',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/admin/mobile/frontend/gallery',  ),));
+    }
+
+    private function getadmin_mobile_frontend_gallery_exportRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\GalleryAdminController::exportAction',  '_sonata_admin' => 'ens.jobeet.admin.gallery',  '_sonata_name' => 'admin_mobile_frontend_gallery_export',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/mobile/frontend/gallery/export',  ),));
     }
 }

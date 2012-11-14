@@ -15,6 +15,10 @@ $loader->registerNamespaces(array(
     'Assetic'          => __DIR__.'/../vendor/assetic/src',
     'Metadata'         => __DIR__.'/../vendor/metadata/src',
     'FOS'              => __DIR__.'/../vendor/bundles',
+    'Sonata' => __DIR__.'/../vendor/bundles',
+    'Exporter' => __DIR__.'/../vendor/exporter/lib',
+    'Knp\Bundle' => __DIR__.'/../vendor/bundles',
+    'Knp\Menu' => __DIR__.'/../vendor/KnpMenu/src',
 
 ));
 $loader->registerPrefixes(array(

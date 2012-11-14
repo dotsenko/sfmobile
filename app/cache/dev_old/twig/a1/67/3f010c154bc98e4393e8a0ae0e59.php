@@ -16,12 +16,15 @@ class __TwigTemplate_a1673f010c154bc98e4393e8a0ae0e59 extends Twig_Template
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        if ($this->getAttribute($this->getContext($context, "trace"), "function")) {
+        if (isset($context["trace"])) { $_trace_ = $context["trace"]; } else { $_trace_ = null; }
+        if ($this->getAttribute($_trace_, "function")) {
             // line 2
             echo "                at ";
-            echo twig_escape_filter($this->env, (($this->getAttribute($this->getContext($context, "trace"), "class") . $this->getAttribute($this->getContext($context, "trace"), "type")) . $this->getAttribute($this->getContext($context, "trace"), "function")), "html", null, true);
+            if (isset($context["trace"])) { $_trace_ = $context["trace"]; } else { $_trace_ = null; }
+            echo twig_escape_filter($this->env, (($this->getAttribute($_trace_, "class") . $this->getAttribute($_trace_, "type")) . $this->getAttribute($_trace_, "function")), "html", null, true);
             echo "(";
-            echo twig_escape_filter($this->env, $this->env->getExtension('code')->formatArgsAsText($this->getAttribute($this->getContext($context, "trace"), "args")), "html", null, true);
+            if (isset($context["trace"])) { $_trace_ = $context["trace"]; } else { $_trace_ = null; }
+            echo twig_escape_filter($this->env, $this->env->getExtension('code')->formatArgsAsText($this->getAttribute($_trace_, "args")), "html", null, true);
             echo ")
 ";
         } else {
@@ -30,12 +33,15 @@ class __TwigTemplate_a1673f010c154bc98e4393e8a0ae0e59 extends Twig_Template
 ";
         }
         // line 6
-        if (($this->getAttribute($this->getContext($context, "trace", true), "file", array(), "any", true, true) && $this->getAttribute($this->getContext($context, "trace", true), "line", array(), "any", true, true))) {
+        if (isset($context["trace"])) { $_trace_ = $context["trace"]; } else { $_trace_ = null; }
+        if (($this->getAttribute($_trace_, "file", array(), "any", true, true) && $this->getAttribute($_trace_, "line", array(), "any", true, true))) {
             // line 7
             echo "                    in ";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "trace"), "file"), "html", null, true);
+            if (isset($context["trace"])) { $_trace_ = $context["trace"]; } else { $_trace_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_trace_, "file"), "html", null, true);
             echo " line ";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "trace"), "line"), "html", null, true);
+            if (isset($context["trace"])) { $_trace_ = $context["trace"]; } else { $_trace_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_trace_, "line"), "html", null, true);
             echo "
 ";
         }
@@ -53,6 +59,6 @@ class __TwigTemplate_a1673f010c154bc98e4393e8a0ae0e59 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  23 => 3,  97 => 22,  95 => 21,  88 => 19,  78 => 17,  71 => 14,  40 => 7,  25 => 4,  22 => 3,  17 => 1,  92 => 20,  86 => 6,  79 => 40,  29 => 6,  24 => 4,  19 => 2,  69 => 14,  63 => 10,  58 => 9,  49 => 8,  43 => 15,  37 => 8,  20 => 2,  139 => 26,  131 => 44,  128 => 43,  125 => 42,  121 => 40,  115 => 39,  107 => 36,  99 => 35,  96 => 34,  91 => 33,  82 => 18,  77 => 39,  75 => 16,  57 => 9,  50 => 13,  46 => 14,  44 => 10,  39 => 8,  33 => 7,  30 => 4,  27 => 4,  135 => 54,  129 => 50,  122 => 46,  116 => 42,  113 => 41,  108 => 40,  104 => 24,  102 => 37,  94 => 32,  89 => 29,  87 => 32,  84 => 31,  81 => 26,  73 => 21,  70 => 20,  67 => 12,  62 => 16,  59 => 15,  55 => 8,  51 => 11,  48 => 10,  41 => 14,  38 => 6,  35 => 8,  31 => 6,  28 => 3,);
+        return array (  34 => 6,  117 => 22,  112 => 21,  109 => 20,  104 => 19,  96 => 18,  84 => 14,  80 => 12,  68 => 9,  44 => 6,  26 => 4,  23 => 3,  17 => 1,  92 => 39,  86 => 6,  79 => 40,  57 => 22,  46 => 7,  29 => 6,  24 => 4,  19 => 1,  69 => 14,  63 => 10,  55 => 8,  49 => 6,  43 => 15,  41 => 14,  37 => 7,  20 => 2,  157 => 26,  149 => 44,  145 => 43,  142 => 42,  132 => 39,  110 => 35,  106 => 34,  98 => 33,  93 => 32,  90 => 31,  83 => 27,  81 => 26,  73 => 20,  61 => 15,  52 => 13,  48 => 11,  45 => 10,  40 => 8,  36 => 6,  33 => 7,  30 => 4,  27 => 6,  144 => 54,  138 => 40,  130 => 46,  124 => 24,  121 => 36,  115 => 40,  111 => 38,  108 => 37,  99 => 32,  94 => 29,  91 => 17,  88 => 16,  85 => 26,  77 => 39,  74 => 20,  71 => 19,  65 => 16,  62 => 15,  58 => 8,  54 => 11,  51 => 10,  42 => 9,  38 => 8,  35 => 5,  31 => 7,  28 => 3,);
     }
 }

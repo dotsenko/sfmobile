@@ -17,6 +17,7 @@ class appprodUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerat
        'gallerypage' => true,
        'contactspage' => true,
        'aboutpage' => true,
+       'sharepage' => true,
        'fos_user_security_login' => true,
        'fos_user_security_check' => true,
        'fos_user_security_logout' => true,
@@ -72,6 +73,11 @@ class appprodUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerat
     private function getaboutpageRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\AboutController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/about',  ),));
+    }
+
+    private function getsharepageRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Mobile\\FrontendBundle\\Controller\\ShareController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/share',  ),));
     }
 
     private function getfos_user_security_loginRouteInfo()
